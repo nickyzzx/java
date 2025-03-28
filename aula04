@@ -1,0 +1,4 @@
+run:
+Professor{area=informática, nome=Roberta}
+Aluno{nome=Nicolly, matricula=12345}
+BUILD SUCCESSFUL (total time: 0 seconds)

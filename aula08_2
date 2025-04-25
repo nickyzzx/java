@@ -1,0 +1,282 @@
+package aula08;
+
+import javax.swing.JOptionPane;
+
+public class CadastroDeEstudante extends javax.swing.JFrame {
+
+    int cont;
+    Estudante[] est = new Estudante[3];
+
+    public CadastroDeEstudante() {
+        initComponents();
+        for (int i = 0; i < 3; i++) {
+            Estudante et = new Estudante("","","");
+            est[i] = et;
+            
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jSpinner1 = new javax.swing.JSpinner();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtMat = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
+        btCad = new javax.swing.JButton();
+        btPesq = new javax.swing.JButton();
+        btDel = new javax.swing.JButton();
+        btAlt = new javax.swing.JButton();
+        btLimpar = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle(":: CADASTRO DO ESTUDANTE ::");
+
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        jLabel1.setText("DADOS DO ESTUDANTE");
+
+        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
+        jLabel2.setText("MATRÍCULA");
+
+        jLabel3.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
+        jLabel3.setText("NOME");
+
+        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
+        jLabel4.setText("E-MAIL");
+
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
+
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
+
+        btCad.setText("CADASTRAR");
+        btCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCadActionPerformed(evt);
+            }
+        });
+
+        btPesq.setText("PESQUISAR");
+        btPesq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPesqActionPerformed(evt);
+            }
+        });
+
+        btDel.setText("DELETAR");
+        btDel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDelActionPerformed(evt);
+            }
+        });
+
+        btAlt.setText("ALTERAR");
+
+        btLimpar.setText("LIMPAR");
+        btLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLimparActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtMat)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(btCad)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btPesq)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btDel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btAlt)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btLimpar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jLabel1)))
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1)
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btCad)
+                    .addComponent(btPesq)
+                    .addComponent(btDel)
+                    .addComponent(btAlt)
+                    .addComponent(btLimpar))
+                .addContainerGap(70, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void btPesqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesqActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btPesqActionPerformed
+
+    private void btCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadActionPerformed
+        //capturando as informações digitadas pelo usuário
+        String mat = txtMat.getText();
+        String nm = txtNome.getText();
+        String em = txtEmail.getText();
+        
+        if (cont < 3){        
+            if (!txtMat.getText().isBlank() && !txtNome.getText().isBlank()&&!txtEmail.getText().isBlank()){
+                 //et representa um objeto do tipo estudante
+                Estudante et = new Estudante(mat, nm, em);
+                //adicionando o estudante et dentro da lista
+                est[cont] = et;
+                //representa o contador de estudantes da lista
+                cont++;
+        
+                JOptionPane.showMessageDialog(rootPane, 
+                    "Estudante Cadastrado com Sucesso");       
+        
+                limparCampos();
+        
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Matrícula, nome e e-mail são obrigatórios.");
+                
+            }
+            
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Lista cheia.\nTente novamente. ");
+        }
+
+    }//GEN-LAST:event_btCadActionPerformed
+
+    private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
+        limparCampos();
+        
+    }//GEN-LAST:event_btLimparActionPerformed
+
+    private void btDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDelActionPerformed
+        String mat = txtMat.getText();
+        boolean achou = false;
+        for (int i = 0; i < 3; i++) {
+            if (mat.equals(est[i].getMat())){
+                int resp = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja excluir?");
+                if (resp == 0 ){
+                    achou = true;
+                    Estudante et = new Estudante("","", "");
+                    est[i] = et;
+                    limparCampos();
+                    cont--;
+                    break;
+                }//fim do if da resp
+            }//fim do if comparação da matricula
+            
+        }//fim do for
+        if (!achou){
+            JOptionPane.showMessageDialog(rootPane, "Estudante não encontrado.");
+        }
+    }//GEN-LAST:event_btDelActionPerformed
+    
+    private void limparCampos(){
+        txtMat.setText("");
+        txtNome.setText("");
+        txtEmail.setText("");
+    }
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(CadastroDeEstudante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(CadastroDeEstudante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(CadastroDeEstudante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(CadastroDeEstudante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new CadastroDeEstudante().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btAlt;
+    private javax.swing.JButton btCad;
+    private javax.swing.JButton btDel;
+    private javax.swing.JButton btLimpar;
+    private javax.swing.JButton btPesq;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtMat;
+    private javax.swing.JTextField txtNome;
+    // End of variables declaration//GEN-END:variables
+}
